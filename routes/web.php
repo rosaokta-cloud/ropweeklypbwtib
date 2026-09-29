@@ -4,21 +4,34 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('Home',[
+        "title"=> "Home",
+    ]);
 
 });
 
-Route::get('/berita', function () {
-    return view('berita');
+Route::get('/Berita', function () {
+    return view('Berita', [
+        "title"=> "Berita",
+    ]);
     
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/Contact', function () {
+    return view('Contact', [
+        "title"=> "Contact",
+    ]);
 
 });
 
-Route::get('/profile', function () {
-    return view('profile');
+Route::get('/Profile', function () {
+    return view('Profile', [
+        "title"=> "Profile",
+        "name" => "Rosa",
+        "nim" =>13242520071,
+        "prodi" => "Teknologi Informasi",
+        "gambar"    => "rosa.jpg",
+    ]);
     
 });
+
