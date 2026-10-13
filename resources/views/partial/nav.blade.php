@@ -14,15 +14,15 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Berita') ? 'active' : '' }}" href="/Berita">Berita</a>
+          <a class="nav-link {{ ($title === 'Berita') ? 'active' : '' }}" href="/berita">Berita</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Profile') ? 'active' : '' }}" href="/Profile">Profile</a>
+          <a class="nav-link {{ ($title === 'Profile') ? 'active' : '' }}" href="/profile">Profile</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Contact') ? 'active' : '' }}" href="/Contact">Contact</a>
+          <a class="nav-link {{ ($title === 'Contact') ? 'active' : '' }}" href="/contact">Contact</a>
         </li>
 
       </ul>
