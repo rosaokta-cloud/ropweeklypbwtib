@@ -1,5 +1,12 @@
+
 @extends('layouts.main')
 
 @section('content')
-    <h1>HALAMAN BERITA</h1>
+    <div class="mt-5">
+        @foreach ($beritas as $berita)
+        <h2><a href="/berita/{{ $berita['slug'] }}">{{ $berita["judul"] }}</a></h2>
+        <h5>{{ $berita["penulis"] }}</h5>
+        <p>{{ $berita["isi"] }}</p>
+        @endforeach
+    </div>
 @endsection

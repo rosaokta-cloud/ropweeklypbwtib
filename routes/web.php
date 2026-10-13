@@ -1,31 +1,36 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Berita;
 
 Route::get('/', function () {
-    return view('Home',[
+    return view('home',[
         "title"=> "Home",
     ]);
 
 });
 
-Route::get('/Berita', function () {
-    return view('Berita', [
+
+
+Route::get('/berita', function () {
+   
+
+    return view('berita', [
         "title"=> "Berita",
+        "beritas"=> Berita::ambilberita(),
     ]);
     
 });
 
-Route::get('/Contact', function () {
-    return view('Contact', [
+Route::get('/contact', function () {
+    return view('contact', [
         "title"=> "Contact",
     ]);
 
 });
 
-Route::get('/Profile', function () {
-    return view('Profile', [
+Route::get('/profile', function () {
+    return view('profile', [
         "title"=> "Profile",
         "name" => "Rosa",
         "nim" =>13242520071,
@@ -33,5 +38,13 @@ Route::get('/Profile', function () {
         "gambar"    => "rosa.jpg",
     ]);
     
+});
+
+Route::get('/berita/{slug}', function ($slug) {
+
+return view('beritatunggal', [
+    "title"=> Berita::getTitle($slug),
+    "berita" =>Berita::getBerita($slug),
+]);
 });
 
