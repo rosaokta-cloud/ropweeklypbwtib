@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->id(); //tipenya id
+            $table->string('name'); //tipernya string
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->rememberToken(); //kalau berurusan dengan middleware auth, maka harus ada rememberToken
             $table->timestamps();
         });
 

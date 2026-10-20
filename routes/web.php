@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Berita;
+
 
 Route::get('/', function () {
     return view('home', [
@@ -9,12 +10,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/berita', function () {
-    return view('berita', [
-        'title' => 'Berita',
-        'beritas' => Berita::ambilBerita(),
-    ]);
-});
+
 
 Route::get('/contact', function () {
     return view('contact', [
@@ -32,11 +28,9 @@ Route::get('/profile', function () {
     ]);
 });
 
-Route::get('/berita/{slug}', function ($slug) {
-    abort_if(Berita::getBerita($slug) === null, 404);
 
-    return view('beritatunggal', [
-        "title" => Berita::getTitle($slug),
-        "berita" => Berita::getBerita($slug),
-    ]);
-});
+Route::get('/berita', [BeritaController::class, 'tampilBerita']);
+
+//routing seharusnya tidak melakukan closure atau anonymous function
+//function harus dipindahkan ke controller
+Route::get('/berita/{slug}', [BeritaController::class, 'getBerita']);

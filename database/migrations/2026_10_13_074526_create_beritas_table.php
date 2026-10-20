@@ -9,17 +9,24 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    //function up = menjalankan untuk membuat database atau execute database
     public function up(): void
     {
         Schema::create('beritas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            //kalau boleh kosong pakai nullable= $table->string('judul')->nullable();
+            $table->string('judul');
+            $table->string('penulis');
+            $table->text('slug');
+            $table->text('isi');
+            $table->timestamps(); //database dibuat kapan
         });
     }
 
     /**
      * Reverse the migrations.
      */
+    //function down = untuk menghapus database atau rollback database
     public function down(): void
     {
         Schema::dropIfExists('beritas');
