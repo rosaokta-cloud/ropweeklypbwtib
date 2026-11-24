@@ -1,7 +1,5 @@
 @extends('layouts.backend')
 
-// kalo mau cek isi data yang dikirim ke view, bisa pake dd($datas) di controller, atau pake @dd($datas) di view
-//@dd($datas)
 @section('content')
     <div class="container text-center mt-4 mb-4">
         <h3> Data Mahasiswa </h3>
