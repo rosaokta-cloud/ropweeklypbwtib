@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -34,3 +35,5 @@ Route::get('/berita', [BeritaController::class, 'tampilBerita']);
 //routing seharusnya tidak melakukan closure atau anonymous function
 //function harus dipindahkan ke controller
 Route::get('/berita/{slug}', [BeritaController::class, 'getBerita']);
+
+Route::get('/mahasiswa',[MahasiswaController::class, 'index'])->name('mahasiswa');
